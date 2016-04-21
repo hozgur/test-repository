@@ -1,16 +1,18 @@
-var http = require("http");
-console.log("Hello World!");
-http.createServer(function (request, response) {
-
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/plain
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   
-   // Send the response body as "Hello World"
-   response.end('Hello World\n');
-}).listen(8081);
-
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081/');
-
+console.log("Async Test");
+var a = 1;
+var func1 = function(c) 
+{
+    while(a != 0)
+    {
+        process.nextTick(function() {
+            console.log(c);
+            for(b=0;b<1000000;b++)
+            {}    
+        });        
+    }        
+}
+console.log("Async Test 1");
+func1(1);
+console.log("Async Test 2");
+func1(10000);
+console.log("Async Test 3");
