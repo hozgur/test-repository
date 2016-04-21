@@ -4,7 +4,7 @@
   "description": "t",
   "main": "app.js",    
   "scripts": {
-    "run":"node app.js",
+    "run":"app.js",
     "test": "make test"
   },
   "keywords": [
